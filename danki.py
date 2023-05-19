@@ -8,14 +8,14 @@ import re
 from pathlib import Path
 from markdownify import markdownify
 
-ANKI_DATABASE_FILE = "/home/denis/.local/share/Anki2/denis/collection.anki2"
-OBSIDIAN_DIR = Path("/home/denis/Sync/Notes/Current/Anki")
+ANKI_DATABASE_FILE = '/home/denis/.local/share/Anki2/denis/collection.anki2'
+OBSIDIAN_DIR = Path('/home/denis/Sync/Notes/Current/Anki')
 SPLIT_CHAR = chr(31)
 
 # MarkupResemblesLocatorWarning
 warnings.filterwarnings(
-    "ignore",
-    message="MarkupResemblesLocatorWarning",
+    'ignore',
+    message='MarkupResemblesLocatorWarning',
 )
 
 
@@ -48,7 +48,7 @@ class Note(NamedTuple):
         return self.title.startswith('```')
 
     def file_name(self) -> str:
-        return f"{self.note_id}-{slugify(self.title)}.md"
+        return f'{self.note_id}-{slugify(self.title)}.md'
 
 
 def slugify(text: str) -> str:
@@ -83,7 +83,7 @@ def load_notes() -> list[Note]:
 def write_notes(notes: list[Note]) -> None:
     OBSIDIAN_DIR.mkdir(parents=True, exist_ok=True)
     for note in notes:
-        with open(OBSIDIAN_DIR / note.file_name(), "w") as f:
+        with open(OBSIDIAN_DIR / note.file_name(), 'w') as f:
             f.write(format_as_markdown_file(note))
 
 
