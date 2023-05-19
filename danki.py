@@ -1,11 +1,11 @@
 from __future__ import annotations
-from typing import NamedTuple
-import sqlite3
-import warnings
 
 import re
-
+import sqlite3
+import warnings
 from pathlib import Path
+from typing import NamedTuple
+
 from markdownify import markdownify
 
 ANKI_DATABASE_FILE = '/home/denis/.local/share/Anki2/denis/collection.anki2'
