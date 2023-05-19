@@ -1,0 +1,18 @@
+[project]
+name = "danki"
+version = "0.0.1" 
+# description = "A sample Python project"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = ["anki", "markdownify"]
+[project.optional-dependencies]
+dev = []
+[project.scripts]
+danki = "danki:main"
+
+[tool.setuptools]
+package-data = {"sample" = ["*.dat"]}
+
+[build-system]
+requires = ["setuptools>=43.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
