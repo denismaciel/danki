@@ -27,7 +27,7 @@ class Note(NamedTuple):
     raw: str
 
     @classmethod
-    def from_sql(cls, record: tuple) -> Note:
+    def from_sql(cls, record: tuple[int, str]) -> Note:
         id, fields = record
         assert isinstance(fields, str)
         front, back, *_ = fields.split(SPLIT_CHAR)
@@ -87,7 +87,7 @@ def write_notes(notes: list[Note]) -> None:
             f.write(format_as_markdown_file(note))
 
 
-def main():
+def main() -> int:
     notes = load_notes()
     for note in notes:
         print(note.file_name())

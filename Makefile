@@ -5,6 +5,6 @@ setup-dev:
 
 dependencies-compile-dev:
 	@ echo "Compiling dependencies for development environment..."
-	./venv/bin/pip-compile --output-file dev-requirements.txt --extra dev pyproject.toml
+	./venv/bin/pip-compile --resolver=backtracking --output-file dev-requirements.txt --extra dev pyproject.toml
 
 
