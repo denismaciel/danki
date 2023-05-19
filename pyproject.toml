@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["anki", "markdownify"]
 [project.optional-dependencies]
-dev = []
+dev = ["pytest", "ipython", "pre-commit"]
 [project.scripts]
 danki = "danki:main"
 
